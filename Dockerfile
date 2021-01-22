@@ -41,5 +41,6 @@ RUN /home/user/.dotfiles/install
 
 # execute
 EXPOSE 22
+USER root
 COPY scripts/start.sh .
 CMD /start.sh
