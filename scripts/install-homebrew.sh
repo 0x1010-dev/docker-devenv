@@ -12,5 +12,4 @@ sudo -u linuxbrew /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/H
 chmod g+rwx /home/linux/.linuxbrew/Homebrew
 
 # add to skel profile
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>/etc/skel/.zprofile
+echo "eval \$(/home/linuxbrew/.linuxbrew/bin/brew/bin/brew shellenv)" >>/etc/skel/.zprofile
