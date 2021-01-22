@@ -1,8 +1,13 @@
 #!/bin/bash
 
-# sync base home with mounted home
+# setting persistent home
+echo "Binding /home-persistent to /home..."
 mv /home /home-base
-ln -s /home-persistent /home
+mkdir home
+mount --bind /home-persistent /home
+
+# syncing persistent home with base
+echo "Syncing with /home-base..."
 rsync -qavx /home-base/ /home-persistent/
 
 # setup password
