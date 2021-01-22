@@ -34,6 +34,7 @@ RUN service ssh start
 RUN adduser --shell /usr/bin/zsh --disabled-password --gecos "" user
 RUN adduser user linuxbrew
 RUN adduser user sudo
+RUN echo "%sudo ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/nopasswd
 
 # add customization
 USER user
