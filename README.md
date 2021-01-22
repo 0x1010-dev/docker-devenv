@@ -1,1 +1,4 @@
-# docker-ssh-0x1010-dev
+# docker-devenv
+
+A Docker containing a full Ubuntu-based developer environment.
+

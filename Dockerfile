@@ -22,6 +22,10 @@ RUN ./install-packages.sh \
     vim \
     git
 
+# install docker
+COPY scripts/install-docker.sh .
+RUN ./install-docker.sh
+
 # install homebrew
 COPY scripts/install-homebrew.sh .
 RUN ./install-homebrew.sh
