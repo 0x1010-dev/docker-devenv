@@ -12,6 +12,7 @@ RUN ./install-packages.sh \
     python3-pip \
     locales \
     pwgen \
+    rsync \
     wget \
     sudo \
     curl \
