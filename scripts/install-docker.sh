@@ -28,7 +28,7 @@ add-apt-repository \
 
 # install docker
 apt-get update
-apt-get -y install docker-ce docker-ce-cli containerd.io
+apt-get -y install docker-ce-cli
 
 # delete cached files
 apt-get clean
