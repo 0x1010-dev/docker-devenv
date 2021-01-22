@@ -9,3 +9,8 @@ echo 'linuxbrew ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
 
 # install homebrew
 sudo -u linuxbrew /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+chmod g+rwx /home/linux/.linuxbrew/Homebrew
+
+# add to skel profile
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>/etc/skel/.zprofile
