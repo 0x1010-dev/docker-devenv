@@ -3,13 +3,8 @@ FROM ubuntu:rolling
 # install packages
 COPY scripts/install-packages.sh .
 RUN ./install-packages.sh \
-    ca-certificates \
+    # python build dependencies
     build-essential \
-    openssh-server \
-    supervisor \
-    ruby-full \
-    python3 \
-    python3-pip \
     zlib1g-dev \
     libncurses5-dev \
     libgdbm-dev \
@@ -19,9 +14,17 @@ RUN ./install-packages.sh \
     libffi-dev \
     libsqlite3-dev \
     libbz2-dev \
+    # essentials
+    ca-certificates \
+    openssh-server \
+    supervisor \
+    ruby-full \
+    python3 \
+    python3-pip \
     locales \
     pwgen \
     rsync \
+    mosh \
     wget \
     sudo \
     curl \
