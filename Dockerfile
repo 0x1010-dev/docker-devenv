@@ -1,4 +1,4 @@
-FROM ubuntu:rolling
+FROM ubuntu:latest
 
 # install packages
 COPY scripts/install-packages.sh .
