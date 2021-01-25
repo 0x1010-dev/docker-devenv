@@ -15,6 +15,12 @@ RUN ./install-packages.sh \
     libsqlite3-dev \
     liblzma-dev \
     libbz2-dev \
+    tk-dev \
+    llvm \
+    # x11
+    libgl1-mesa-glx \
+    libegl1-mesa \
+    xvfb \
     # essentials
     ca-certificates \
     openssh-server \
@@ -43,8 +49,8 @@ RUN ./install-docker.sh
 COPY scripts/install-homebrew.sh .
 RUN ./install-homebrew.sh
 
-# setup ssh
-COPY config/sshd.conf /etc/supervisor/conf.d/sshd.conf
+# setup services
+COPY config/services.conf /etc/supervisor/conf.d/services.conf
 RUN service ssh start
 
 # add user
