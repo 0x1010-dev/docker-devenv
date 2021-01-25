@@ -13,6 +13,7 @@ RUN ./install-packages.sh \
     libreadline-dev \
     libffi-dev \
     libsqlite3-dev \
+    liblzma-dev \
     libbz2-dev \
     # essentials
     ca-certificates \
