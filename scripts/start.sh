@@ -1,14 +1,22 @@
 #!/bin/bash
 
-# setting persistent home
-echo "Binding /home-persistent to /home..."
-mv /home /home-base
-mkdir home
-mount --bind /home-persistent /home
+# setup persistent mount points
+echo "Setting up persistent mount points..."
 
-# syncing persistent home with base
-echo "Syncing with /home-base..."
-rsync -qavx /home-base/ /home-persistent/
+PERSISTENT_PATH=/persistent
+declare -a PATHS=(
+    "/home"
+    "/etc/ssh"
+)
+
+for PATH in "${PATHS[@]}"
+do
+    echo "-> $PATH"
+    mv $PATH $PATH-base
+    mkdir -p $PATH
+    rsync -au --ignore-existing $PATH-base/ $PERSISTENT_PATH$PATH/
+    mount --bind $PERSISTENT_PATH$PATH $PATH
+done
 
 # add to docker group
 groupadd -g $(stat -c '%g' /var/run/docker.sock) docker
