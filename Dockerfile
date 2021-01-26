@@ -29,6 +29,7 @@ RUN ./install-packages.sh \
     python3 \
     python3-pip \
     locales \
+    netbase \
     pwgen \
     rsync \
     mosh \
