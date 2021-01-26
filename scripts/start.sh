@@ -9,13 +9,13 @@ declare -a PATHS=(
     "/etc/ssh"
 )
 
-for PATH in "${PATHS[@]}"
+for THIS in "${PATHS[@]}"
 do
-    echo "-> $PATH"
-    mv $PATH $PATH-base
-    mkdir -p $PATH
-    rsync -au --ignore-existing $PATH-base/ $PERSISTENT_PATH$PATH/
-    mount --bind $PERSISTENT_PATH$PATH $PATH
+    echo "-> $THIS"
+    mv $THIS $THIS-base
+    mkdir -p $THIS
+    rsync -au --ignore-existing $THIS-base/ $PERSISTENT_PATH$THIS/
+    mount --bind $PERSISTENT_PATH$THIS $THIS
 done
 
 # add to docker group
