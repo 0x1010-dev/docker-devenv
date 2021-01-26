@@ -13,7 +13,7 @@ for THIS in "${PATHS[@]}"
 do
     echo "-> $THIS"
     mv $THIS $THIS-base
-    mkdir -p $THIS
+    mkdir -p $THIS $PERSISTENT_PATH$THIS
     rsync -au --ignore-existing $THIS-base/ $PERSISTENT_PATH$THIS/
     mount --bind $PERSISTENT_PATH$THIS $THIS
 done
