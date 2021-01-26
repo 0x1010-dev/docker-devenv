@@ -66,7 +66,8 @@ RUN git clone https://github.com/0x1010-dev/dotfiles.git /home/user/.dotfiles
 RUN /home/user/.dotfiles/install
 
 # execute
-EXPOSE 22
+ENV SSHD_PORT 2222
+EXPOSE ${SSHD_PORT}
 USER root
 COPY scripts/start.sh .
 CMD /start.sh

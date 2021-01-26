@@ -15,6 +15,7 @@ docker run -d \
     --hostname=devenv `#optional` \
     -v /path/to/persistent/storage:/persistent \
     -v /var/run/docker.sock:/var/run/docker.sock \
+    -e SSHD_PORT=2222 \
     --restart unless-stopped \
     x1010dev/devenv
 ```
