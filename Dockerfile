@@ -1,6 +1,10 @@
 # FROM ubuntu:rolling
 FROM nvidia/cuda:11.1.1-base-ubuntu20.04
 
+# environment
+ENV SSHD_PORT 2222 \
+    DISPLAY=:0
+
 # install packages
 COPY scripts/install-packages.sh .
 RUN ./install-packages.sh \
@@ -68,7 +72,6 @@ RUN /home/user/.dotfiles/install
 
 # execute
 USER root
-ENV SSHD_PORT 2222
 EXPOSE ${SSHD_PORT}
 COPY scripts/start.sh .
 CMD /start.sh
