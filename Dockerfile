@@ -1,4 +1,5 @@
-FROM ubuntu:rolling
+# FROM ubuntu:rolling
+FROM nvidia/cuda:11.1.1-base-ubuntu20.04
 
 # install packages
 COPY scripts/install-packages.sh .
@@ -66,8 +67,8 @@ RUN git clone https://github.com/0x1010-dev/dotfiles.git /home/user/.dotfiles
 RUN /home/user/.dotfiles/install
 
 # execute
+USER root
 ENV SSHD_PORT 2222
 EXPOSE ${SSHD_PORT}
-USER root
 COPY scripts/start.sh .
 CMD /start.sh
