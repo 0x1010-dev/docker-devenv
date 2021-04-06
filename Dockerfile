@@ -22,6 +22,14 @@ RUN ./install-packages.sh \
     libbz2-dev \
     tk-dev \
     llvm \
+    # pillow deps
+    libjpeg-dev \
+    libtiff-dev \
+    libfreetype-dev \
+    liblcms2-dev \
+    libwebp-dev \
+    libimagequant-dev \
+    libraqm-dev \
     # x11
     libgl1-mesa-glx \
     libegl1-mesa \
