@@ -1,5 +1,5 @@
-# FROM ubuntu:rolling
-FROM nvidia/cuda:11.1.1-base-ubuntu20.04
+FROM ubuntu:rolling
+# FROM nvidia/cuda:11.1.1-base-ubuntu20.04
 
 # environment
 ENV SSHD_PORT=2222 \
