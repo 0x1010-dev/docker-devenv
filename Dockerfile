@@ -22,6 +22,9 @@ RUN ./install-packages.sh \
     libbz2-dev \
     tk-dev \
     llvm \
+    # fpga development
+    ghdl-llvm \
+    gtkwave \
     # pillow deps
     libjpeg-dev \
     libtiff-dev \
