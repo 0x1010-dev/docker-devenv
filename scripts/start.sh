@@ -29,5 +29,8 @@ echo "user:$USER_PASSWORD" | chpasswd
 echo "[ SSH Login Credentials ]"
 echo "user: $USER_PASSWORD"
 
+# x11 forwarding
+echo "XAUTHORITY=/tmp/.Xauthority"
+
 # execute sshd
 supervisord -n
