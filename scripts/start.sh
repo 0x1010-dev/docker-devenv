@@ -30,7 +30,7 @@ echo "[ SSH Login Credentials ]"
 echo "user: $USER_PASSWORD"
 
 # x11 forwarding
-echo "XAUTHORITY=/tmp/.Xauthority"
+echo "XAUTHORITY=/tmp/.Xauthority" >> /etc/environment
 
 # execute sshd
 supervisord -n
